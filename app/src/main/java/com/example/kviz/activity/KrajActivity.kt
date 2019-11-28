@@ -1,5 +1,6 @@
 package com.example.kviz.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kviz.R
@@ -13,6 +14,11 @@ class KrajActivity : AppCompatActivity() {
 
         val rezultat = intent.getIntExtra(REZULTAT, 0)
         textView.text = "Vas rezultat je: $rezultat"
+
+        button_natrag.setOnClickListener {
+            val intent =  Intent(this, PocetniActivity::class.java)
+            startActivity(intent)
+        }
     }
     companion object{
         const val REZULTAT = "REZULTAT"
